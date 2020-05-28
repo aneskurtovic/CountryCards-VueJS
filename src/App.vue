@@ -15,10 +15,12 @@
                <img v-if="selectedCountry" :src="selectedCountry.flag" class="card front" />
             </div>
             <div class="card back padding" v-if="selectedCountry">
+                <div v-if="selectedCountry.name">
                 <p><u>Capital:</u> {{ selectedCountry.capital }} </p>
                 <p><u>Population:</u> {{ selectedCountry.population }} </p>
                 <p><u>Internet domain:</u> {{ selectedCountry ? selectedCountry.topLevelDomain : ""}} </p>
                 <p><u>Call number:</u> +{{ selectedCountry ?  selectedCountry.callingCodes : "" }} </p>
+                </div>
             </div>
         </div>
     </div>
