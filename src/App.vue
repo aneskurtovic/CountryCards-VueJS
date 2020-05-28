@@ -12,15 +12,12 @@
     <div id="container">
         <div id="content">
             <div class="card front padding">
-              <!-- If you have time help me stretch the country flags to take the full div for example Australia is broken -->
                <img v-if="selectedCountry" :src="selectedCountry.flag" class="card front" />
             </div>
             <div class="card back padding" v-if="selectedCountry">
                 <p><u>Capital:</u> {{ selectedCountry.capital }} </p>
                 <p><u>Population:</u> {{ selectedCountry.population }} </p>
-                <!-- Propery topLevelDomain is array with length 1 ... and it is shown as [".us"] -->
                 <p><u>Internet domain:</u> {{ selectedCountry ? selectedCountry.topLevelDomain : ""}} </p>
-                <!-- Propery callingCodes is array with length 1 ... and it is shown as ["1"] -->
                 <p><u>Call number:</u> + {{ selectedCountry ?  selectedCountry.callingCodes : "" }} </p>
             </div>
         </div>
