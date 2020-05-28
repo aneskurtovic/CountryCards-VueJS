@@ -18,7 +18,7 @@
                 <p><u>Capital:</u> {{ selectedCountry.capital }} </p>
                 <p><u>Population:</u> {{ selectedCountry.population }} </p>
                 <p><u>Internet domain:</u> {{ selectedCountry ? selectedCountry.topLevelDomain : ""}} </p>
-                <p><u>Call number:</u> + {{ selectedCountry ?  selectedCountry.callingCodes : "" }} </p>
+                <p><u>Call number:</u> +{{ selectedCountry ?  selectedCountry.callingCodes : "" }} </p>
             </div>
         </div>
     </div>
@@ -42,7 +42,9 @@ export default {
       const countryName = e.target.value;
       var numberFormatter = new Intl.NumberFormat();
       this.selectedCountry = this.countries.find(x => x.name == countryName);
-      this.selectedCountry.population = numberFormatter.format(this.selectedCountry.population);      
+      this.selectedCountry.population = numberFormatter.format(this.selectedCountry.population);
+      this.selectedCountry.topLevelDomain = this.selectedCountry.topLevelDomain[0];      
+      this.selectedCountry.callingCodes = this.selectedCountry.callingCodes[0];
     }
   },
   created(){
