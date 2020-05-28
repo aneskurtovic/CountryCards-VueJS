@@ -43,8 +43,9 @@ export default {
     },
     selectCountry(e){
       const countryName = e.target.value;
+      var numberFormatter = new Intl.NumberFormat();
       this.selectedCountry = this.countries.find(x => x.name == countryName);
-      console.log(this.selectedCountry);
+      this.selectedCountry.population = numberFormatter.format(this.selectedCountry.population);      
     }
   },
   created(){
